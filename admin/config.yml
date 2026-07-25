@@ -1,0 +1,135 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/img/uploads"
+public_folder: "/assets/img/uploads"
+
+site_url: https://www.drift-ia.com
+display_url: https://www.drift-ia.com
+
+# Friendly labels — each screen is a simple form. Add, delete, drag to reorder.
+collections:
+  - name: "plans"
+    label: "🏠 Home Plans"
+    description: "Add a new plan, edit its details, or replace its photo."
+    files:
+      - name: "plans"
+        label: "Plans"
+        file: "data/plans.json"
+        editor: { preview: false }
+        fields:
+          - label: "Plans"
+            name: "plans"
+            label_singular: "Plan"
+            widget: "list"
+            add_to_top: true
+            summary: "{{fields.name}} — {{fields.sqft}} sq ft"
+            fields:
+              - { label: "Plan name", name: "name", widget: "string" }
+              - { label: "Style (e.g. Modern Farmhouse)", name: "type", widget: "string" }
+              - { label: "Square feet", name: "sqft", widget: "number", value_type: "int", min: 0 }
+              - { label: "Bedrooms", name: "beds", widget: "number", value_type: "int", min: 0 }
+              - { label: "Bathrooms", name: "baths", widget: "string", hint: "e.g. 2.5" }
+              - { label: "Pre-approved / permit-ready?", name: "approved", widget: "boolean", default: false, required: false, hint: "Turn on to show the 'Approved' badge." }
+              - { label: "Status line", name: "status", widget: "string", default: "Library Plan", hint: "Shown under the plan. E.g. 'Approved — City of Everett (Basic Plan)'." }
+              - { label: "Photo / rendering", name: "image", widget: "image", hint: "Click to upload or replace." }
+
+  - name: "projects"
+    label: "📷 Project Photos (Work)"
+    description: "Your Select Work gallery. Add a project, drag to reorder, delete photos, or drop in new ones."
+    files:
+      - name: "projects"
+        label: "Projects"
+        file: "data/projects.json"
+        editor: { preview: false }
+        fields:
+          - label: "Projects"
+            name: "projects"
+            label_singular: "Project"
+            widget: "list"
+            add_to_top: true
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Project name", name: "name", widget: "string" }
+              - { label: "Category", name: "category", widget: "select", options: ["Full Home", "Kitchen", "Bath", "Interiors", "Hospitality"] }
+              - { label: "Location", name: "location", widget: "string", required: false }
+              - { label: "Show small (single image)", name: "compact", widget: "boolean", default: false, required: false, hint: "For less-featured projects." }
+              - label: "Photos"
+                name: "images"
+                widget: "list"
+                summary: "Photo"
+                field: { label: "Photo", name: "image", widget: "image" }
+
+  - name: "upcoming"
+    label: "🖼️ Upcoming Work (Renderings)"
+    description: "Projects in design or under construction."
+    files:
+      - name: "upcoming"
+        label: "Upcoming"
+        file: "data/upcoming.json"
+        editor: { preview: false }
+        fields:
+          - label: "Projects"
+            name: "upcoming"
+            label_singular: "Project"
+            widget: "list"
+            add_to_top: true
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Project name", name: "name", widget: "string" }
+              - { label: "Type", name: "type", widget: "string" }
+              - { label: "Status", name: "status", widget: "select", options: ["In Design", "In Progress", "Coming Soon", "Concept"] }
+              - label: "Renderings"
+                name: "images"
+                widget: "list"
+                field: { label: "Rendering", name: "image", widget: "image" }
+
+  - name: "journal"
+    label: "📝 Journal (Blog)"
+    description: "Write and edit blog posts. Add a cover photo, and write in the simple editor."
+    files:
+      - name: "journal"
+        label: "Posts"
+        file: "data/journal.json"
+        editor: { preview: false }
+        fields:
+          - label: "Posts"
+            name: "posts"
+            label_singular: "Post"
+            widget: "list"
+            add_to_top: true
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD" }
+              - { label: "Cover photo", name: "cover", widget: "image" }
+              - { label: "Short summary (shown on the card)", name: "excerpt", widget: "text" }
+              - { label: "Post body", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "✏️ Site Text, Contact & Social"
+    description: "Edit key wording, contact details, and your social links (updates everywhere)."
+    files:
+      - name: "content"
+        label: "Text, contact & social"
+        file: "data/content.json"
+        editor: { preview: false }
+        fields:
+          - { label: "Home page statement", name: "statement", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Address", name: "address", widget: "string" }
+          - { label: "Instagram feed embed code (optional)", name: "instagramEmbed", widget: "text", required: false, hint: "Paste the embed code from a free feed widget (e.g. Behold.so or Elfsight) to show your live Instagram on the Connect page." }
+          - label: "Social & profile links"
+            name: "social"
+            widget: "object"
+            hint: "Paste full URLs. Empty ones are hidden automatically."
+            fields:
+              - { label: "Instagram", name: "instagram", widget: "string", required: false }
+              - { label: "Facebook", name: "facebook", widget: "string", required: false }
+              - { label: "Pinterest", name: "pinterest", widget: "string", required: false }
+              - { label: "Houzz", name: "houzz", widget: "string", required: false }
+              - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+              - { label: "ArchiPro", name: "archipro", widget: "string", required: false }
+              - { label: "AD PRO", name: "adpro", widget: "string", required: false }

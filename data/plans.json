@@ -1,0 +1,84 @@
+{
+  "plans": [
+    {
+      "name": "The Si Plan",
+      "type": "Modern Farmhouse",
+      "sqft": 2650,
+      "beds": 4,
+      "baths": "2.5",
+      "approved": true,
+      "status": "Approved &mdash; City of Everett (Basic Plan)",
+      "image": "assets/img/upcoming/si-plan/si-plan-01-t.jpg"
+    },
+    {
+      "name": "The Sansoni",
+      "type": "Contemporary",
+      "sqft": 3200,
+      "beds": 4,
+      "baths": "3.5",
+      "approved": false,
+      "status": "Library Plan",
+      "image": "assets/img/upcoming/sansoni/sansoni-01-t.jpg"
+    },
+    {
+      "name": "The Yadi",
+      "type": "Modern",
+      "sqft": 2900,
+      "beds": 4,
+      "baths": "3",
+      "approved": false,
+      "status": "Library Plan",
+      "image": "assets/img/upcoming/yadi/yadi-01-t.jpg"
+    },
+    {
+      "name": "The Elenes",
+      "type": "Contemporary",
+      "sqft": 3400,
+      "beds": 5,
+      "baths": "3.5",
+      "approved": false,
+      "status": "Library Plan",
+      "image": "assets/img/upcoming/elenes/elenes-01-t.jpg"
+    },
+    {
+      "name": "Blake Lot",
+      "type": "Modern Farmhouse",
+      "sqft": 2500,
+      "beds": 4,
+      "baths": "2.5",
+      "approved": false,
+      "status": "Library Plan",
+      "image": "assets/img/upcoming/marysville/marysville-01-t.jpg"
+    },
+    {
+      "name": "The Farmhouse",
+      "type": "Modern Farmhouse",
+      "sqft": 2800,
+      "beds": 4,
+      "baths": "2.5",
+      "approved": false,
+      "status": "Library Plan",
+      "image": "assets/img/upcoming/farmhouse/farmhouse-01-t.jpg"
+    },
+    {
+      "name": "The Craftsman",
+      "type": "Craftsman",
+      "sqft": 2600,
+      "beds": 4,
+      "baths": "3",
+      "approved": false,
+      "status": "Library Plan",
+      "image": "assets/img/upcoming/craftsman/craftsman-01-t.jpg"
+    },
+    {
+      "name": "The Bothell",
+      "type": "Modern Farmhouse",
+      "sqft": 3100,
+      "beds": 4,
+      "baths": "3.5",
+      "approved": false,
+      "status": "Library Plan",
+      "image": "assets/img/upcoming/bothell/bothell-01-t.jpg"
+    }
+  ]
+}

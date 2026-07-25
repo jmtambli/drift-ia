@@ -1,0 +1,104 @@
+{
+  "upcoming": [
+    {
+      "name": "Sansoni Residence",
+      "type": "Custom Home",
+      "status": "In Design",
+      "images": [
+        "assets/img/upcoming/sansoni/sansoni-01.jpg",
+        "assets/img/upcoming/sansoni/sansoni-02.jpg",
+        "assets/img/upcoming/sansoni/sansoni-03.jpg"
+      ]
+    },
+    {
+      "name": "Yadi Residence",
+      "type": "Custom Home",
+      "status": "In Progress",
+      "images": [
+        "assets/img/upcoming/yadi/yadi-01.jpg",
+        "assets/img/upcoming/yadi/yadi-02.jpg"
+      ]
+    },
+    {
+      "name": "Elenes Residence",
+      "type": "Custom Home",
+      "status": "In Design",
+      "images": [
+        "assets/img/upcoming/elenes/elenes-01.jpg",
+        "assets/img/upcoming/elenes/elenes-02.jpg"
+      ]
+    },
+    {
+      "name": "Bothell Residence",
+      "type": "Custom Home",
+      "status": "In Progress",
+      "images": [
+        "assets/img/upcoming/bothell/bothell-01.jpg"
+      ]
+    },
+    {
+      "name": "Marysville \u2014 Blake Lot",
+      "type": "New Construction",
+      "status": "Coming Soon",
+      "images": [
+        "assets/img/upcoming/marysville/marysville-01.jpg"
+      ]
+    },
+    {
+      "name": "The Si Plan",
+      "type": "Custom Home",
+      "status": "Coming Soon",
+      "images": [
+        "assets/img/upcoming/si-plan/si-plan-01.jpg"
+      ]
+    },
+    {
+      "name": "Modern Farmhouse",
+      "type": "Custom Home",
+      "status": "In Design",
+      "images": [
+        "assets/img/upcoming/farmhouse/farmhouse-01.jpg",
+        "assets/img/upcoming/farmhouse/farmhouse-02.jpg"
+      ]
+    },
+    {
+      "name": "All-White Craftsman",
+      "type": "Custom Home",
+      "status": "Concept",
+      "images": [
+        "assets/img/upcoming/craftsman/craftsman-01.jpg"
+      ]
+    },
+    {
+      "name": "Kitchen Studies",
+      "type": "Interior Concepts",
+      "status": "In Design",
+      "images": [
+        "assets/img/upcoming/kitchens/kitchens-01.jpg",
+        "assets/img/upcoming/kitchens/kitchens-02.jpg",
+        "assets/img/upcoming/kitchens/kitchens-03.jpg",
+        "assets/img/upcoming/kitchens/kitchens-04.jpg"
+      ]
+    },
+    {
+      "name": "Bath & Powder Concepts",
+      "type": "Interior Concepts",
+      "status": "In Design",
+      "images": [
+        "assets/img/upcoming/baths/baths-01.jpg",
+        "assets/img/upcoming/baths/baths-02.jpg",
+        "assets/img/upcoming/baths/baths-03.jpg",
+        "assets/img/upcoming/baths/baths-04.jpg"
+      ]
+    },
+    {
+      "name": "Office & Laundry",
+      "type": "Interior Concepts",
+      "status": "In Design",
+      "images": [
+        "assets/img/upcoming/office-laundry/office-laundry-01.jpg",
+        "assets/img/upcoming/office-laundry/office-laundry-02.jpg"
+      ]
+    }
+  ]
+}

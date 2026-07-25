@@ -1,0 +1,155 @@
+{
+  "projects": [
+    {
+      "name": "Sycamore Lane Residence",
+      "category": "Full Home",
+      "location": "Puget Sound, WA",
+      "compact": false,
+      "images": [
+        "assets/img/work/solinsky/solinsky-01.jpg",
+        "assets/img/work/solinsky/solinsky-02.jpg",
+        "assets/img/work/solinsky/solinsky-03.jpg",
+        "assets/img/work/solinsky/solinsky-04.jpg",
+        "assets/img/work/solinsky/solinsky-05.jpg",
+        "assets/img/work/solinsky/solinsky-06.jpg",
+        "assets/img/work/solinsky/solinsky-07.jpg",
+        "assets/img/work/solinsky/solinsky-08.jpg"
+      ]
+    },
+    {
+      "name": "Sammamish Residence",
+      "category": "Full Home",
+      "location": "Sammamish, WA",
+      "compact": false,
+      "images": [
+        "assets/img/work/bowen/bowen-01.jpg",
+        "assets/img/work/bowen/bowen-02.jpg",
+        "assets/img/work/bowen/bowen-03.jpg",
+        "assets/img/work/bowen/bowen-04.jpg",
+        "assets/img/work/bowen/bowen-05.jpg",
+        "assets/img/work/bowen/bowen-06.jpg",
+        "assets/img/work/bowen/bowen-07.jpg",
+        "assets/img/work/bowen/bowen-08.jpg"
+      ]
+    },
+    {
+      "name": "Strauss Residence",
+      "category": "Full Home",
+      "location": "Puget Sound, WA",
+      "compact": false,
+      "images": [
+        "assets/img/work/strauss/strauss-01.jpg",
+        "assets/img/work/strauss/strauss-02.jpg",
+        "assets/img/work/strauss/strauss-03.jpg",
+        "assets/img/work/strauss/strauss-04.jpg",
+        "assets/img/work/strauss/strauss-05.jpg",
+        "assets/img/work/strauss/strauss-06.jpg"
+      ]
+    },
+    {
+      "name": "GALA Residence",
+      "category": "Full Home",
+      "location": "Greater Seattle, WA",
+      "compact": false,
+      "images": [
+        "assets/img/work/gala/gala-01.jpg",
+        "assets/img/work/gala/gala-02.jpg",
+        "assets/img/work/gala/gala-03.jpg",
+        "assets/img/work/gala/gala-04.jpg"
+      ]
+    },
+    {
+      "name": "Ashford Residence",
+      "category": "Full Home",
+      "location": "Greater Seattle, WA",
+      "compact": false,
+      "images": [
+        "assets/img/work/ashford/ashford-01.jpg",
+        "assets/img/work/ashford/ashford-02.jpg",
+        "assets/img/work/ashford/ashford-03.jpg",
+        "assets/img/work/ashford/ashford-04.jpg"
+      ]
+    },
+    {
+      "name": "JADE Residence",
+      "category": "Interiors",
+      "location": "Greater Seattle, WA",
+      "compact": false,
+      "images": [
+        "assets/img/work/jade/jade-01.jpg",
+        "assets/img/work/jade/jade-02.jpg",
+        "assets/img/work/jade/jade-03.jpg",
+        "assets/img/work/jade/jade-04.jpg"
+      ]
+    },
+    {
+      "name": "Kirkland Kitchen",
+      "category": "Kitchen",
+      "location": "Kirkland, WA",
+      "compact": false,
+      "images": [
+        "assets/img/work/michael-day/michael-day-01.jpg",
+        "assets/img/work/michael-day/michael-day-02.jpg",
+        "assets/img/work/michael-day/michael-day-03.jpg",
+        "assets/img/work/michael-day/michael-day-04.jpg"
+      ]
+    },
+    {
+      "name": "Issaquah Primary Bath",
+      "category": "Bath",
+      "location": "Issaquah, WA",
+      "compact": false,
+      "images": [
+        "assets/img/work/slossen/slossen-01.jpg",
+        "assets/img/work/slossen/slossen-02.jpg",
+        "assets/img/work/slossen/slossen-03.jpg",
+        "assets/img/work/slossen/slossen-04.jpg"
+      ]
+    },
+    {
+      "name": "Westrock Bath",
+      "category": "Bath",
+      "location": "Greater Seattle, WA",
+      "compact": false,
+      "images": [
+        "assets/img/work/christenson/christenson-01.jpg",
+        "assets/img/work/christenson/christenson-02.jpg",
+        "assets/img/work/christenson/christenson-03.jpg",
+        "assets/img/work/christenson/christenson-04.jpg"
+      ]
+    },
+    {
+      "name": "Gig Harbor Getaway",
+      "category": "Hospitality",
+      "location": "Gig Harbor, WA",
+      "compact": false,
+      "images": [
+        "assets/img/work/gig-harbor/gig-harbor-01.jpg",
+        "assets/img/work/gig-harbor/gig-harbor-02.jpg",
+        "assets/img/work/gig-harbor/gig-harbor-03.jpg",
+        "assets/img/work/gig-harbor/gig-harbor-04.jpg"
+      ]
+    },
+    {
+      "name": "Haber Kitchen",
+      "category": "Kitchen",
+      "location": "Greater Seattle, WA",
+      "compact": true,
+      "images": [
+        "assets/img/work/haber/haber-01.jpg"
+      ]
+    },
+    {
+      "name": "Hakala Kitchen",
+      "category": "Kitchen",
+      "location": "Greater Seattle, WA",
+      "compact": true,
+      "images": [
+        "assets/img/work/hakala/hakala-01.jpg",
+        "assets/img/work/hakala/hakala-02.jpg",
+        "assets/img/work/hakala/hakala-03.jpg",
+        "assets/img/work/hakala/hakala-04.jpg"
+      ]
+    }
+  ]
+}
