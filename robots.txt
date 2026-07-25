@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.drift-ia.com/sitemap.xml
