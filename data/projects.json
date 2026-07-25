@@ -145,10 +145,8 @@
       "location": "Greater Seattle, WA",
       "compact": true,
       "images": [
-        "assets/img/work/hakala/hakala-01.jpg",
-        "assets/img/work/hakala/hakala-02.jpg",
-        "assets/img/work/hakala/hakala-03.jpg",
-        "assets/img/work/hakala/hakala-04.jpg"
+        "/assets/img/uploads/7af9813d-4d68-409e-a776-0b2d38347b51.png",
+        "/assets/img/uploads/647a96a4-6eb1-43ce-97c7-50e8a895a44f.png"
       ]
     }
   ]
