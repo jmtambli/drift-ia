@@ -41,6 +41,19 @@
 .shop-btn{display:inline-block;font-family:'Archivo',sans-serif;font-weight:600;font-size:11px;letter-spacing:.13em;text-transform:uppercase;padding:11px 20px;border-radius:2px;text-decoration:none;background:#26231e;color:#fff;}
 .shop-btn.ghost{background:transparent;color:#26231e;border:1px solid #26231e;}
 .shop-btn.disabled{background:#e6e0d5;color:#9a917f;pointer-events:none;}
+.shop-card .foot.dual{flex-direction:column;align-items:stretch;gap:9px;}
+.shop-card .foot.dual .row{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.shop-card .shop-btn.full{display:block;text-align:center;width:100%;box-sizing:border-box;}
+.shop-card .soon-line{font-family:'Archivo',sans-serif;font-size:11.5px;letter-spacing:.02em;color:#9a917f;text-align:center;display:flex;align-items:center;justify-content:center;gap:7px;padding:9px 0 0;border-top:1px dashed #e6e0d5;margin-top:2px;}
+.shop-card .soon-line .dot{width:6px;height:6px;border-radius:100px;background:#c2a86a;display:inline-block;}
+.shop-card .cover .preview-tag{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);font-family:'Archivo',sans-serif;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#8c8574;background:rgba(255,255,255,.72);padding:4px 12px;border-radius:100px;white-space:nowrap;}
+/* Direct-checkout coming-soon band */
+.directband{max-width:1000px;margin:0 auto;background:#faf7f1;border:1px solid #ece5d8;border-radius:10px;padding:34px 38px;display:grid;grid-template-columns:auto 1fr;gap:26px;align-items:center;}
+.directband .ic{width:54px;height:54px;border-radius:12px;background:#26231e;color:#c2a86a;display:flex;align-items:center;justify-content:center;font-size:24px;}
+.directband .eyebrow{font-family:'Archivo',sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#b08d2f;margin:0 0 7px;}
+.directband h2{font-family:'Bodoni Moda',serif;font-weight:500;font-size:clamp(21px,2.6vw,27px);color:#26231e;margin:0 0 8px;line-height:1.2;}
+.directband p{font-family:'Archivo',sans-serif;font-size:14.5px;line-height:1.6;color:#6f6960;margin:0;max-width:640px;}
+@media(max-width:640px){.directband{grid-template-columns:1fr;padding:28px 24px;text-align:center;}.directband .ic{margin:0 auto;}.directband p{margin:0 auto;}}
 .notify{background:#26231e;border-radius:8px;padding:44px 40px;text-align:center;max-width:820px;margin:0 auto;}
 .notify h2{font-family:'Bodoni Moda',serif;font-weight:400;color:#fff;font-size:clamp(24px,3vw,34px);margin:0 0 12px;}
 .notify p{font-family:'Archivo',sans-serif;font-size:15px;color:rgba(255,255,255,.7);max-width:520px;margin:0 auto 24px;}
@@ -76,15 +89,30 @@
 <section class="page-hero"><div class="wrap"><p class="eyebrow reveal">Guides &amp; Resources</p><h1 class="reveal">Design wisdom, ready to download</h1>
 <p class="reveal">Our design and staging know-how, distilled into downloadable guides, checklists, and templates &mdash; so you can plan, design, and sell beautifully, whether we&rsquo;re working together or you&rsquo;re taking it on yourself.</p></div></section>
 
+<section class="pad-sm" style="padding-top:10px;padding-bottom:6px;"><div class="wrap">
+<div class="directband reveal">
+<div class="ic">&#8681;</div>
+<div>
+<p class="eyebrow">Coming Soon</p>
+<h2>Buy &amp; download directly &mdash; right here</h2>
+<p>Our guides and templates live on Etsy today. We&rsquo;re adding instant checkout and download straight from the studio &mdash; pay, and the file is yours the same moment, no marketplace detour. Until then, tap <em>Shop on Etsy</em> on any guide below.</p>
+</div>
+</div>
+</div></section>
+
 <section class="pad-sm" style="padding-top:0;"><div class="wrap">
 <div class="shop-grid reveal">
 
-<div class="shop-card">
-<div class="cover"><span class="badge">Now Available</span><span class="ttl">The Airbnb &amp;<br>STR Design Guide</span></div>
+<div class="shop-card" data-product="airbnb-guide">
+<div class="cover"><span class="badge">Now Available</span><span class="ttl">The Airbnb &amp;<br>STR Design Guide</span><span class="preview-tag">Preview coming soon</span></div>
 <div class="body">
 <h3>Airbnb &amp; STR Design Guide</h3>
 <p>The complete playbook for designing a short-term rental that photographs beautifully and books &mdash; layout, furnishing, styling, amenities, and the specs that survive guest after guest.</p>
-<div class="foot"><span class="price">On Etsy</span><a class="shop-btn" href="#" target="_blank" rel="noopener">Shop on Etsy</a></div>
+<div class="foot dual">
+<div class="row"><span class="price" data-price>On Etsy</span><a class="shop-btn" data-etsy href="#" target="_blank" rel="noopener">Shop on Etsy</a></div>
+<a class="shop-btn full disabled" data-checkout aria-disabled="true">Buy &amp; Download Here</a>
+<span class="soon-line" data-soon><span class="dot"></span>Instant checkout coming soon</span>
+</div>
 </div>
 </div>
 
@@ -97,30 +125,30 @@
 </div>
 </div>
 
-<div class="shop-card">
-<div class="cover"><span class="badge soon">Coming Soon</span><span class="ttl">Drift Signature<br>Paint Palettes</span></div>
+<div class="shop-card" data-product="paint-palettes">
+<div class="cover"><span class="badge soon">Coming Soon</span><span class="ttl">Drift Signature<br>Paint Palettes</span><span class="preview-tag">Preview coming soon</span></div>
 <div class="body">
 <h3>Signature Paint Palettes</h3>
 <p>Our go-to, designer-tested color palettes &mdash; whole-home schemes that always feel warm, current, and cohesive. Ready to take straight to the paint store.</p>
-<div class="foot"><span class="price">Coming soon</span><a class="shop-btn disabled" aria-disabled="true">Notify Me</a></div>
+<div class="foot"><span class="price" data-price>Coming soon</span><a class="shop-btn disabled" data-checkout aria-disabled="true">Notify Me</a></div>
 </div>
 </div>
 
-<div class="shop-card">
-<div class="cover"><span class="badge soon">Coming Soon</span><span class="ttl">Room-by-Room<br>Design Templates</span></div>
+<div class="shop-card" data-product="design-templates">
+<div class="cover"><span class="badge soon">Coming Soon</span><span class="ttl">Room-by-Room<br>Design Templates</span><span class="preview-tag">Preview coming soon</span></div>
 <div class="body">
 <h3>Room-by-Room Design Templates</h3>
 <p>Editable mood-board and layout templates to plan a room like a designer &mdash; furniture, finishes, and styling, organized and beautiful.</p>
-<div class="foot"><span class="price">Coming soon</span><a class="shop-btn disabled" aria-disabled="true">Notify Me</a></div>
+<div class="foot"><span class="price" data-price>Coming soon</span><a class="shop-btn disabled" data-checkout aria-disabled="true">Notify Me</a></div>
 </div>
 </div>
 
-<div class="shop-card">
-<div class="cover"><span class="badge soon">Coming Soon</span><span class="ttl">New-Build &amp;<br>Reno Budget Workbook</span></div>
+<div class="shop-card" data-product="budget-workbook">
+<div class="cover"><span class="badge soon">Coming Soon</span><span class="ttl">New-Build &amp;<br>Reno Budget Workbook</span><span class="preview-tag">Preview coming soon</span></div>
 <div class="body">
 <h3>New-Build &amp; Reno Budget Workbook</h3>
 <p>A plain-English spreadsheet to scope and budget a build or remodel &mdash; the line items, ranges, and questions to ask before you break ground.</p>
-<div class="foot"><span class="price">Coming soon</span><a class="shop-btn disabled" aria-disabled="true">Notify Me</a></div>
+<div class="foot"><span class="price" data-price>Coming soon</span><a class="shop-btn disabled" data-checkout aria-disabled="true">Notify Me</a></div>
 </div>
 </div>
 
@@ -205,6 +233,72 @@ An architecture and interior design studio designing intentional residential and
 </div>
 </div>
 </footer>
+<!-- ============================================================
+     DRIFT STORE CONFIG  —  edit this one block to go live
+     ------------------------------------------------------------
+     For each product, fill in any of:
+       etsy     : your Etsy listing URL   -> activates "Shop on Etsy"
+       checkout : a Stripe Payment Link, Payhip, Gumroad, or
+                  Lemon Squeezy URL       -> activates "Buy & Download Here"
+       price    : e.g. "$29"              -> shows on the card
+       preview  : path/URL to a preview image (e.g.
+                  "assets/img/guides/airbnb-guide.jpg")
+     Leave a value as "" to keep that button in its "coming soon" state.
+     Nothing here charges anyone — a product only sells once you add a
+     real checkout URL. Save the file and re-upload to publish.
+============================================================ -->
+<script>
+window.DRIFT_STORE = {
+  "airbnb-guide": {
+    etsy:     "",   /* <- paste your Etsy listing URL here */
+    checkout: "",   /* <- paste your Stripe/Payhip/Gumroad link here to enable direct buy */
+    price:    "",   /* e.g. "$29" */
+    preview:  ""    /* e.g. "assets/img/guides/airbnb-guide-cover.jpg" */
+  },
+  "paint-palettes":   { etsy:"", checkout:"", price:"", preview:"" },
+  "design-templates": { etsy:"", checkout:"", price:"", preview:"" },
+  "budget-workbook":  { etsy:"", checkout:"", price:"", preview:"" }
+};
+(function(){
+  var cfg = window.DRIFT_STORE || {};
+  document.querySelectorAll('.shop-card[data-product]').forEach(function(card){
+    var c = cfg[card.getAttribute('data-product')]; if(!c) return;
+    // Preview image
+    if(c.preview){
+      var cover = card.querySelector('.cover');
+      var ttl = cover && cover.querySelector('.ttl');
+      var tag = cover && cover.querySelector('.preview-tag');
+      if(cover){
+        var img = document.createElement('img');
+        img.src = c.preview; img.alt = (card.querySelector('h3')||{}).textContent || 'Preview';
+        img.loading = 'lazy';
+        cover.insertBefore(img, cover.firstChild);
+        if(ttl) ttl.style.display='none';
+        if(tag) tag.remove();
+      }
+    }
+    // Price label
+    if(c.price){ var p = card.querySelector('[data-price]'); if(p) p.textContent = c.price; }
+    // Etsy button
+    var etsy = card.querySelector('[data-etsy]');
+    if(etsy && c.etsy){ etsy.href = c.etsy; }
+    // Direct checkout button
+    var buy = card.querySelector('[data-checkout]');
+    var soon = card.querySelector('[data-soon]');
+    if(buy && c.checkout){
+      buy.classList.remove('disabled');
+      buy.removeAttribute('aria-disabled');
+      buy.setAttribute('href', c.checkout);
+      buy.setAttribute('target','_blank');
+      buy.setAttribute('rel','noopener');
+      buy.textContent = 'Buy & Download Here';
+      if(soon) soon.remove();
+      var badge = card.querySelector('.badge.soon');
+      if(badge){ badge.classList.remove('soon'); badge.textContent = 'Now Available'; }
+    }
+  });
+})();
+</script>
 <script src="assets/js/app.js" defer></script>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>if(window.netlifyIdentity){netlifyIdentity.on("init",function(u){if(!u){netlifyIdentity.on("login",function(){document.location.href="/admin/";});}});}</script>
