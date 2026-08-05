@@ -327,5 +327,12 @@ window.DRIFT_STORE = {
 <script src="assets/js/app.js" defer></script>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>if(window.netlifyIdentity){netlifyIdentity.on("init",function(u){if(!u){netlifyIdentity.on("login",function(){document.location.href="/admin/";});}});}</script>
+
+<script>
+/* card preview photos */
+(function(){var P={'finish-schedule-pro':'assets/img/guides/finish-schedule-pro.jpg','ffe-schedule':'assets/img/guides/ffe-schedule.jpg','finish-schedule-starter':'assets/img/guides/finish-schedule-starter.jpg','designer-spec-bundle':'assets/img/guides/designer-spec-bundle.jpg','str-welcome-kit':'assets/img/guides/str-welcome-kit.jpg'};
+function paint(){document.querySelectorAll('.shop-card').forEach(function(c){var k=c.getAttribute('data-product');var s=P[k];if(!s)return;var cov=c.querySelector('.cover');if(!cov)return;cov.style.backgroundImage="url('"+s+"')";cov.style.backgroundSize='cover';cov.style.backgroundPosition='center';cov.style.backgroundRepeat='no-repeat';var t=cov.querySelector('.ttl');if(t)t.style.display='none';});}
+if(document.readyState!=='loading')paint();else document.addEventListener('DOMContentLoaded',paint);})();
+</script>
 </body>
 </html>
