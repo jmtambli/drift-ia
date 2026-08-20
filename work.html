@@ -105,6 +105,37 @@ An architecture and interior design studio designing intentional residential and
 </div>
 </footer>
 <script src="assets/js/app.js" defer></script>
+<script>
+/* Press credits — add an entry keyed by the exact project name in data/projects.json. */
+var DRIFT_PRESS={
+"Sycamore Lane Residence":{label:"Featured in Rue Magazine",url:"https://ruemag.com/home-tour-2/a-thoughtful-renovation-in-issaquah-becomes-the-start-of-a-new-design-career"}
+};
+(function(){
+var ROW="flex:0 0 100%;margin-top:10px;";
+var LINK="display:inline-block;font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:#b08d2f;text-decoration:none;border-bottom:1px solid rgba(176,141,47,.45);padding-bottom:3px;";
+function decorate(){
+var heads=document.querySelectorAll('#work-root .project-head'),n=0;
+for(var i=0;i<heads.length;i++){
+var h=heads[i]; if(h.querySelector('.press-credit')) continue;
+var t=h.querySelector('h3'); if(!t) continue;
+var p=DRIFT_PRESS[t.textContent.trim()]; if(!p) continue;
+var row=document.createElement('div'); row.setAttribute('style',ROW);
+var a=document.createElement('a');
+a.className='press-credit'; a.href=p.url; a.target='_blank'; a.rel='noopener';
+a.setAttribute('style',LINK); a.textContent=(p.label||'In the press')+' ↗';
+row.appendChild(a); h.appendChild(row); n++;
+}
+return n;
+}
+var root=document.getElementById('work-root');
+if(!root) return;
+if(!decorate()){
+var mo=new MutationObserver(function(){ if(decorate()) mo.disconnect(); });
+mo.observe(root,{childList:true,subtree:true});
+setTimeout(function(){mo.disconnect();},15000);
+}
+})();
+</script>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>if(window.netlifyIdentity){netlifyIdentity.on("init",function(u){if(!u){netlifyIdentity.on("login",function(){document.location.href="/admin/";});}});}</script>
 </body>
