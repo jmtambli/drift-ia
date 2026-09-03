@@ -22,6 +22,12 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Drift Interiors + Architecture","alternateName":"Drift IA","description":"Boutique interior design and licensed architecture studio serving the greater Seattle and Puget Sound region.","image":"https://www.drift-ia.com/assets/img/work/gala/gala-01.jpg","@id":"https://www.drift-ia.com","url":"https://www.drift-ia.com","telephone":"+1-425-478-0327","email":"jen@drift-ia.com","address":{"@type":"PostalAddress","streetAddress":"14526 107th St NE","addressLocality":"Lake Stevens","addressRegion":"WA","postalCode":"98258","addressCountry":"US"},"areaServed":["Seattle","Bellevue","Kirkland","Sammamish","Snohomish County","King County","Puget Sound"],"knowsAbout":["interior design","residential architecture","kitchen design","bathroom design","multifamily architecture","home remodeling"],"priceRange":"$$$"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<style>
+.captcha-field{max-width:320px;}
+.captcha-field .g-recaptcha,.captcha-field>div[data-netlify-recaptcha]{transform-origin:0 0;}
+.captcha-note{margin:10px 0 0;font-size:12px;letter-spacing:.02em;color:#a33;}
+@media(max-width:360px){.captcha-field .g-recaptcha{transform:scale(.86);}}
+</style>
 </head>
 <body>
 <header class="site-header on-light">
@@ -49,7 +55,7 @@
 <section class="page-hero"><div class="wrap"><p class="eyebrow reveal">Start a Project</p><h1 class="reveal">Let&rsquo;s begin</h1>
 <p class="reveal">Share a few details about your project and we&rsquo;ll follow up to talk through the right approach, scope, and next steps. Every field but name and email is optional.</p></div></section>
 <section class="pad-sm"><div class="wrap" style="max-width:900px;">
-<form class="lead-form reveal" name="design-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+<form class="lead-form reveal" name="design-inquiry" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true" action="/thank-you">
 <input type="hidden" name="form-name" value="design-inquiry">
 <p class="hp"><label>Leave blank: <input name="bot-field"></label></p>
 <div class="frow">
@@ -73,6 +79,7 @@
 <div class="field"><label>Ideal Timeline</label><select name="timeline"><option value="" disabled selected>Select&hellip;</option><option>Ready to start</option><option>1–3 months</option><option>3–6 months</option><option>6–12 months</option><option>Just exploring</option></select></div>
 </div>
 <div class="field"><label>Tell us about your project</label><textarea name="message" rows="4" placeholder="What are you dreaming up?"></textarea></div>
+<div class="field captcha-field"><label>Verification <span>*</span></label><div data-netlify-recaptcha="true"></div><p class="captcha-note" hidden>Please check the box above so we know you&rsquo;re human.</p></div>
 <div class="form-actions">
 <button class="btn solid" type="submit">Submit Inquiry</button>
 <p class="form-note">Prefer to reach us directly? <a href="mailto:jen@drift-ia.com">jen@drift-ia.com</a> &middot; <a href="tel:4254780327">425-478-0327</a></p>
@@ -131,6 +138,22 @@ An architecture and interior design studio designing intentional residential and
 </div>
 </div>
 </footer>
+<script>
+(function(){
+var forms=document.querySelectorAll('form[data-netlify-recaptcha]');
+Array.prototype.forEach.call(forms,function(f){
+f.addEventListener('submit',function(e){
+try{
+if(window.grecaptcha&&typeof grecaptcha.getResponse==='function'&&!grecaptcha.getResponse()){
+e.preventDefault();
+var n=f.querySelector('.captcha-note');
+if(n){n.hidden=false;n.scrollIntoView({block:'center',behavior:'smooth'});}
+}
+}catch(err){}
+});
+});
+})();
+</script>
 <script src="assets/js/app.js" defer></script>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>if(window.netlifyIdentity){netlifyIdentity.on("init",function(u){if(!u){netlifyIdentity.on("login",function(){document.location.href="/admin/";});}});}</script>

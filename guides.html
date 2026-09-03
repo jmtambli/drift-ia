@@ -61,6 +61,10 @@
 .notify input{flex:1;min-width:200px;font-family:'Archivo',sans-serif;font-size:15px;padding:13px 16px;border:0;border-radius:3px;}
 .notify button{font-family:'Archivo',sans-serif;font-weight:600;font-size:12px;letter-spacing:.13em;text-transform:uppercase;padding:13px 26px;border:0;border-radius:3px;background:#c2a86a;color:#26231e;cursor:pointer;}
 .notify .fine{font-size:11.5px;color:rgba(255,255,255,.45);margin:14px 0 0;}
+.notify .captcha-wrap{display:flex;justify-content:center;width:100%;overflow:hidden;margin-top:2px;}
+.notify .captcha-wrap>div{transform-origin:center top;}
+.notify .captcha-note{font-family:'Archivo',sans-serif;font-size:12px;color:#e8b4b4;margin:0;width:100%;}
+@media(max-width:400px){.notify .captcha-wrap>div{transform:scale(.82);}}
 </style>
 </head>
 <body>
@@ -198,11 +202,13 @@
 <div class="notify reveal">
 <h2>New guides, first</h2>
 <p>We&rsquo;re adding new guides, templates, and palettes regularly. Drop your email and we&rsquo;ll let you know the moment something new lands &mdash; plus the occasional design tip.</p>
-<form name="guides-notify" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you">
+<form name="guides-notify" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true" action="/thank-you">
 <input type="hidden" name="form-name" value="guides-notify">
 <p class="hp" style="position:absolute;left:-9999px;"><label>Leave blank: <input name="bot-field"></label></p>
 <input type="email" name="email" placeholder="you@email.com" aria-label="Email address" required>
 <button type="submit">Notify Me</button>
+<div class="captcha-wrap"><div data-netlify-recaptcha="true"></div></div>
+<p class="captcha-note" hidden>Please check the box above so we know you&rsquo;re human.</p>
 </form>
 <p class="fine">No spam &mdash; just new resources and the occasional note from the studio.</p>
 </div>
@@ -264,30 +270,30 @@ An architecture and interior design studio designing intentional residential and
 </div>
 </footer>
 <!-- ============================================================
-     DRIFT STORE CONFIG  —  edit this one block to go live
+     DRIFT STORE CONFIG — edit this one block to go live
      ------------------------------------------------------------
      For each product, fill in any of:
-       etsy     : your Etsy listing URL   -> activates "Shop on Etsy"
+       etsy     : your Etsy listing URL -> activates "Shop on Etsy"
        checkout : a Stripe Payment Link, Payhip, Gumroad, or
-                  Lemon Squeezy URL       -> activates "Buy & Download Here"
-       price    : e.g. "$29"              -> shows on the card
+                  Lemon Squeezy URL -> activates "Buy & Download Here"
+       price    : e.g. "$29" -> shows on the card
        preview  : path/URL to a preview image (e.g.
                   "assets/img/guides/airbnb-guide.jpg")
      Leave a value as "" to keep that button in its "coming soon" state.
      Nothing here charges anyone — a product only sells once you add a
      real checkout URL. Save the file and re-upload to publish.
-============================================================ -->
+     ============================================================ -->
 <script>
 window.DRIFT_STORE = {
-  'finish-schedule-pro':     { etsy:'https://www.etsy.com/listing/4548615154', checkout:'https://payhip.com/b/FHK7X', price:'$67',  preview:'assets/img/guides/finish-schedule-pro.jpg' },
-  'ffe-schedule':            { etsy:'https://www.etsy.com/listing/4548608367', checkout:'https://payhip.com/b/FTqMY', price:'$67',  preview:'assets/img/guides/ffe-schedule.jpg' },
-  'finish-schedule-starter': { etsy:'https://www.etsy.com/listing/4548624756', checkout:'https://payhip.com/b/ud3VX', price:'$67',  preview:'assets/img/guides/finish-schedule-starter.jpg' },
-  'designer-spec-bundle':    { etsy:'https://www.etsy.com/listing/4548615251', checkout:'https://payhip.com/b/hP6Ey', price:'$124', preview:'assets/img/guides/designer-spec-bundle.jpg' },
-  'str-welcome-kit':         { etsy:'https://www.etsy.com/listing/4548619955', checkout:'https://payhip.com/b/MZBjA', price:'$22',  preview:'assets/img/guides/str-welcome-kit.jpg' },
-  'airbnb-guide':            { etsy:'https://www.etsy.com/shop/PretivaDesign', checkout:'', price:'', preview:'' },
-  'paint-palettes':          { etsy:'', checkout:'', price:'', preview:'' },
-  'design-templates':        { etsy:'', checkout:'', price:'', preview:'' },
-  'budget-workbook':         { etsy:'', checkout:'', price:'', preview:'' }
+  'finish-schedule-pro': { etsy:'https://www.etsy.com/listing/4548615154', checkout:'https://payhip.com/b/FHK7X', price:'$67', preview:'assets/img/guides/finish-schedule-pro.jpg' },
+  'ffe-schedule': { etsy:'https://www.etsy.com/listing/4548608367', checkout:'https://payhip.com/b/FTqMY', price:'$67', preview:'assets/img/guides/ffe-schedule.jpg' },
+  'finish-schedule-starter': { etsy:'https://www.etsy.com/listing/4548624756', checkout:'https://payhip.com/b/ud3VX', price:'$67', preview:'assets/img/guides/finish-schedule-starter.jpg' },
+  'designer-spec-bundle': { etsy:'https://www.etsy.com/listing/4548615251', checkout:'https://payhip.com/b/hP6Ey', price:'$124', preview:'assets/img/guides/designer-spec-bundle.jpg' },
+  'str-welcome-kit': { etsy:'https://www.etsy.com/listing/4548619955', checkout:'https://payhip.com/b/MZBjA', price:'$22', preview:'assets/img/guides/str-welcome-kit.jpg' },
+  'airbnb-guide': { etsy:'https://www.etsy.com/shop/PretivaDesign', checkout:'', price:'', preview:'' },
+  'paint-palettes': { etsy:'', checkout:'', price:'', preview:'' },
+  'design-templates': { etsy:'', checkout:'', price:'', preview:'' },
+  'budget-workbook': { etsy:'', checkout:'', price:'', preview:'' }
 };
 (function(){
   var cfg = window.DRIFT_STORE || {};
@@ -327,6 +333,22 @@ window.DRIFT_STORE = {
       if(badge){ badge.classList.remove('soon'); badge.textContent = 'Now Available'; }
     }
   });
+})();
+</script>
+<script>
+(function(){
+var forms=document.querySelectorAll('form[data-netlify-recaptcha]');
+Array.prototype.forEach.call(forms,function(f){
+f.addEventListener('submit',function(e){
+try{
+if(window.grecaptcha&&typeof grecaptcha.getResponse==='function'&&!grecaptcha.getResponse()){
+e.preventDefault();
+var n=f.querySelector('.captcha-note');
+if(n){n.hidden=false;n.scrollIntoView({block:'center',behavior:'smooth'});}
+}
+}catch(err){}
+});
+});
 })();
 </script>
 <script src="assets/js/app.js" defer></script>

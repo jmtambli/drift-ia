@@ -33,6 +33,10 @@
 .getbox button{font-family:'Archivo',sans-serif;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:15px 26px;border:0;border-radius:2px;background:#c2a86a;color:#26231e;cursor:pointer;}
 .getbox .fine{font-size:11.5px;color:rgba(255,255,255,.45);margin:14px 0 0;}
 @media(max-width:820px){.grab{grid-template-columns:1fr;gap:30px;}}
+.captcha-wrap{display:flex;justify-content:center;overflow:hidden;}
+.captcha-wrap>div{transform-origin:center top;}
+.captcha-note{font-family:'Archivo',sans-serif;font-size:12px;color:#e8b4b4;margin:0;}
+@media(max-width:400px){.captcha-wrap>div{transform:scale(.82);}}
 </style>
 </head>
 <body>
@@ -79,10 +83,12 @@
 <p class="g-eyebrow">Instant, Free Download</p>
 <h3>Send it to me</h3>
 <p>Drop your email and we&rsquo;ll send you straight to the checklist &mdash; plus the occasional design tip. No spam, ever.</p>
-<form name="airbnb-checklist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/airbnb-checklist-thank-you.html">
+<form name="airbnb-checklist" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true" action="/airbnb-checklist-thank-you.html">
 <input type="hidden" name="form-name" value="airbnb-checklist">
 <p class="hp" style="position:absolute;left:-9999px;"><label>Leave blank: <input name="bot-field"></label></p>
 <input type="email" name="email" placeholder="you@email.com" aria-label="Email address" required>
+<div class="captcha-wrap"><div data-netlify-recaptcha="true"></div></div>
+<p class="captcha-note" hidden>Please check the box above so we know you&rsquo;re human.</p>
 <button type="submit">Send Me the Checklist</button>
 </form>
 <p class="fine">We&rsquo;ll email you new guides and resources now and then. Unsubscribe anytime.</p>
@@ -138,6 +144,22 @@ An architecture and interior design studio designing intentional residential and
 </div>
 </div>
 </footer>
+<script>
+(function(){
+var forms=document.querySelectorAll('form[data-netlify-recaptcha]');
+Array.prototype.forEach.call(forms,function(f){
+f.addEventListener('submit',function(e){
+try{
+if(window.grecaptcha&&typeof grecaptcha.getResponse==='function'&&!grecaptcha.getResponse()){
+e.preventDefault();
+var n=f.querySelector('.captcha-note');
+if(n){n.hidden=false;n.scrollIntoView({block:'center',behavior:'smooth'});}
+}
+}catch(err){}
+});
+});
+})();
+</script>
 <script src="assets/js/app.js" defer></script>
 </body>
 </html>
