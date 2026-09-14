@@ -167,6 +167,10 @@
       if(/^### /.test(b)) return '<h3>'+inline(b.replace(/^### /,''))+'</h3>';
       if(/^## /.test(b))  return '<h2>'+inline(b.replace(/^## /,''))+'</h2>';
       if(/^# /.test(b))   return '<h2>'+inline(b.replace(/^# /,''))+'</h2>';
+      if(/^!\[[^\]]*\]\([^)]+\)$/.test(b)){
+        var im=b.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+        return '<figure class="post-fig"><img src="'+im[2]+'" alt="'+im[1]+'" loading="lazy">'+(im[1]?'<figcaption>'+im[1]+'</figcaption>':'')+'</figure>';
+      }
       if(/^(-|\*) /.test(b)){
         var items=b.split(/\n/).map(function(li){return '<li>'+inline(li.replace(/^(-|\*) /,''))+'</li>';}).join('');
         return '<ul>'+items+'</ul>';
