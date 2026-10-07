@@ -107,6 +107,24 @@ An architecture and interior design studio designing intentional residential and
 </div>
 </div>
 </footer>
+<style>.post-card{position:relative;}.post-card .post-link{position:absolute;inset:0;z-index:2;}</style>
+<script>
+/* Static page per journal post (for search engines). Regenerate when posts are added or retitled. */
+window.DRIFT_POST_PAGES={"No, AI Isn't Making Our Fees Go Down": "journal-no-ai-isnt-making-our-fees-go-down.html","What AI Can't See in a Room": "journal-what-ai-cant-see-in-a-room.html","Inside the Miller Residence: One House, Room by Room": "journal-inside-the-miller-residence-one-house-room-by-room.html","The Strauss Residence: Traditional Detail, Working Hard": "journal-the-strauss-residence-traditional-detail-working-hard.html","Design With Intent: How We Begin Every Project": "journal-design-with-intent-how-we-begin-every-project.html","Staging That Sells: Why Presentation Moves Markets": "journal-staging-that-sells-why-presentation-moves-markets.html","Permit-Ready: Building Faster With Pre-Approved Plans": "journal-permit-ready-building-faster-with-pre-approved-plans.html"};
+(function(){
+var root=document.getElementById('journal-root');if(!root)return;
+function link(){
+root.querySelectorAll('.post-card').forEach(function(c){
+if(c.querySelector('.post-link'))return;
+var h=c.querySelector('h3');var u=h&&window.DRIFT_POST_PAGES[h.textContent.trim()];if(!u)return;
+var a=document.createElement('a');a.className='post-link';a.href=u;a.setAttribute('aria-label',h.textContent.trim());
+a.addEventListener('click',function(e){e.stopPropagation();});
+c.appendChild(a);
+});
+}
+new MutationObserver(link).observe(root,{childList:true});link();
+})();
+</script>
 <script src="assets/js/app.js" defer></script>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>if(window.netlifyIdentity){netlifyIdentity.on("init",function(u){if(!u){netlifyIdentity.on("login",function(){document.location.href="/admin/";});}});}</script>
